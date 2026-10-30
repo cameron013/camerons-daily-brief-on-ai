@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRIEF TITLE</title>
+<meta name="description" content="ONE-SENTENCE DESCRIPTION">
+<meta name="referrer" content="no-referrer">
+<style>
+:root{--bg:#ffffff;--bg-subtle:#f6f7f9;--text-1:#0f1115;--text-2:#4a4f59;--text-3:#7a808a;--border:#e3e5e9;--border-subtle:#eef0f2;--border-strong:#c9cdd3;--accent:#1d6ff2;--accent-2:#e3a400;--accent-3:#11a8c4;--plus:#1a8a4a;--minus:#c23b3b;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#111316;--bg-subtle:#1a1d21;--text-1:#f1f3f5;--text-2:#b4bac3;--text-3:#878e98;--border:#2b2f35;--border-subtle:#22262b;--border-strong:#3a3f46;--accent:#5b9bff;--accent-2:#f2c14e;--accent-3:#46c8de;--plus:#4cc283;--minus:#ff7a7a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text-1);font-family:var(--font);font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+.page{max-width:1280px;margin:0 auto;padding:40px 32px 80px}
+.title{font-size:36px;line-height:42px;letter-spacing:-0.02em;font-weight:600;margin:0 0 14px}
+.band{scroll-margin-top:16px;display:flex;flex-direction:column;gap:16px}
+.sub{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.card{border:1px solid var(--border);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.card-h{margin:0;font-size:18px;line-height:25px;font-weight:600}
+.sub>.card-h{font-size:16px}
+.caption{margin:-6px 0 0;color:var(--text-3);font-size:13px}
+.text{margin:0;color:var(--text-1);max-width:860px}
+.bullets{margin:0;padding-left:20px;max-width:860px;display:flex;flex-direction:column;gap:8px}
+.divider{border:0;border-top:1px solid var(--border-subtle);margin:8px 0;width:100%}
+.callout{background:var(--bg-subtle);border-radius:12px;padding:16px 18px;border-left:3px solid var(--accent)}
+.callout-lead{font-weight:600;margin-bottom:4px}
+.grid{display:grid;gap:12px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pc{border:1px solid var(--border-subtle);border-radius:12px;padding:14px 16px}
+.pc-h{font-weight:600;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.mk{display:inline-flex;width:18px;height:18px;border-radius:9999px;align-items:center;justify-content:center;font-size:13px}
+.plus{color:var(--plus);border:1px solid var(--plus)}.minus{color:var(--minus);border:1px solid var(--minus)}
+.props{margin:0;display:flex;flex-direction:column;border-top:1px solid var(--border-subtle)}
+.prop{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--border-subtle)}
+.prop dt{color:var(--text-2);font-size:13px}.prop dd{margin:0}
+.rows{display:flex;flex-direction:column;border-top:1px solid var(--border-subtle)}
+.row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-subtle);align-items:flex-start}
+.row-lead{flex:0 0 110px;color:var(--accent);font-size:13px;font-weight:500;padding-top:1px}
+.row-main{flex:1;min-width:0}.row-title{font-weight:600}.row-detail{color:var(--text-2);margin-top:2px}
+.row-meta{flex:0 0 auto;color:var(--text-2);font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.metric-label{color:var(--text-2);font-size:13px}.metric-value{font-size:28px;line-height:36px;font-weight:600;margin:4px 0}.metric-detail{color:var(--text-3);font-size:13px}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:16px}
+.tbl{border-collapse:collapse;width:100%;font-size:14px}
+.tbl th{text-align:left;font-weight:500;color:var(--text-2);font-size:13px;padding:10px 14px;border-bottom:1px solid var(--border);white-space:nowrap}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border-subtle);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}.tbl td:first-child{font-weight:500}
+.buyer td:nth-child(3){min-width:280px}
+.quote{margin:0;border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.quote blockquote{margin:0 0 8px;font-size:16px}.quote figcaption{color:var(--text-3);font-size:13px}
+.links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.linkcard{display:flex;flex-direction:column;gap:4px;border:1px solid var(--border);border-radius:12px;padding:12px 14px;text-decoration:none}
+.linkcard:hover{border-color:var(--border-strong)}.lc-title{font-weight:500}.lc-site{color:var(--text-3);font-size:13px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg-btn{font:inherit;font-size:13px;border:1px solid var(--border);background:none;color:var(--text-2);border-radius:9999px;padding:4px 12px;cursor:pointer}
+.seg-btn.on{border-color:var(--accent);color:var(--accent)}.seg-n{margin-left:6px;color:var(--text-3)}
+.sel{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--text-2)}
+.sel select{font:inherit;font-size:14px;color:var(--text-1);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:6px 10px}
+.audio{margin-top:14px;display:flex;flex-direction:column;gap:6px;max-width:520px}
+.audio-label{color:var(--accent);font-size:13px;font-weight:500}.audio audio{width:100%}
+.toc{margin-top:18px;font-size:13px}
+.toc summary{cursor:pointer;color:var(--text-2);list-style:none;display:inline-flex;align-items:center;gap:6px}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary::after{content:"";width:6px;height:6px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(-45deg);transition:transform 150ms ease}
+.toc[open] summary::after{transform:rotate(45deg)}
+.toc nav{display:flex;flex-direction:column;gap:6px;margin-top:10px;padding-left:12px;border-left:1px solid var(--border-subtle)}
+.toc nav a{text-decoration:none;color:var(--text-1)}.toc-n{color:var(--accent)}
+.foot{margin-top:48px;color:var(--text-3);font-size:13px}
+@media (max-width:760px){.page{padding:24px 16px 60px}.title{font-size:28px;line-height:34px}.g2,.g3,.links{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.prop{grid-template-columns:1fr;gap:2px}.row{flex-wrap:wrap}.row-lead{flex-basis:100%}}
+@media (max-width:420px){.metrics{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- Daily brief page template. Replace every placeholder comment and every ALL CAPS placeholder inside an attribute. Keep this one file self-contained: inline CSS, no outside requests. -->
+<main class="page"><h1 class="title"><!-- BRIEF TITLE --></h1><div style="font-family:var(--font);max-width:720px"><div style="color:var(--text-2);font-size:18px;line-height:27px;font-weight:400"><!-- ONE-PARAGRAPH DESCRIPTION --></div><div style="color:var(--text-3);font-size:13px;line-height:18px;margin-top:10px"><!-- Month D, YYYY -->. Public sources only. Refreshed every weekday morning.</div></div>
+<div class="audio"><div class="audio-label">Listen: 5-minute audio overview</div><audio controls preload="metadata" src="brief.mp3">Your browser does not support audio playback. <a href="brief.mp3">Download the MP3</a>.</audio></div>
+<details class="toc"><summary>Table of Contents</summary><nav><a href="#tldr"><span class="toc-n">00</span> | TL:DR</a><a href="#key-numbers"><span class="toc-n">01</span> | Key Numbers</a><a href="#big-three"><span class="toc-n">02</span> | The Big Three</a><a href="#known-knowns"><span class="toc-n">03</span> | Known knowns</a><a href="#known-unknowns"><span class="toc-n">04</span> | Known unknowns</a><a href="#unknown-knowns"><span class="toc-n">05</span> | Unknown knowns</a><a href="#unknown-unknowns"><span class="toc-n">06</span> | Unknown unknowns</a><a href="#x-saying"><span class="toc-n">07</span> | What X is saying</a><a href="#compute-scoreboard"><span class="toc-n">08</span> | Compute scoreboard</a><a href="#buyer-map"><span class="toc-n">09</span> | Buyer Map</a><a href="#state-of-thesis"><span class="toc-n">10</span> | State of the Thesis</a><a href="#sources"><span class="toc-n">11</span> | Sources</a></nav></details>
+<section id="tldr" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">00</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>TL:DR</span></div></div>
+<ul class="bullets"><li>What happened: <!-- ... --></li><li>What it means: <!-- ... --></li><li>What to watch: <!-- ... --></li></ul></section>
+<section id="key-numbers" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">01</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Key Numbers</span></div></div>
+<p class="text"><!-- LEAD SENTENCE --></p><div class="metrics">
+<!-- Repeat 4 to 6 times -->
+<div class="metric"><div class="metric-label"><!-- LABEL --></div><div class="metric-value"><!-- FIGURE --></div><div class="metric-detail"><!-- DETAIL. Source: OUTLET --></div></div>
+</div></section>
+<section id="big-three" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">02</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>The Big Three</span></div></div>
+<!-- Repeat 3 times -->
+<section class="card"><h3 class="card-h"><!-- SENTENCE HEADLINE --></h3><p class="text">What it is: <!-- ... --></p><p class="text">Why it matters: <!-- ... --></p><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="https://grok.com/?q=URL-ENCODED-QUESTION" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">Read more on Grok</a><a href="https://x.com/search?q=URL-ENCODED-SEARCH&amp;f=live" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">See it on X</a></div></section>
+</section>
+<section id="known-knowns" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">03</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Known knowns</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Confirmed news this window.</div></div>
+<!-- Up to 5 cards. The first 3 are the debate behind The Big Three. -->
+<section class="card"><h3 class="card-h"><!-- N. STORY: bull, bear, and my call --></h3><div class="grid g2"><div class="pc"><div class="pc-h"><span class="mk plus">+</span>Bull</div><p class="text"><!-- BULL CASE --></p></div><div class="pc"><div class="pc-h"><span class="mk minus">&#8722;</span>Bear</div><p class="text"><!-- BEAR CASE --></p></div></div><dl class="props"><div class="prop"><dt>My call (<!-- Certain / Likely / Guessing -->)</dt><dd><!-- ... --></dd></div><div class="prop"><dt>Who wins</dt><dd><!-- ... --></dd></div><div class="prop"><dt>Who loses</dt><dd><!-- ... --></dd></div></dl><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="https://grok.com/?q=URL-ENCODED-QUESTION" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">Read more on Grok</a><a href="https://x.com/search?q=URL-ENCODED-SEARCH&amp;f=live" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">See it on X</a></div></section>
+<!-- OPTIONAL MODULE: "What this means for <YOUR COMPANY>". Delete from here to END OPTIONAL MODULE if you do not use it. -->
+<hr class="divider"/><section class="card"><h3 class="card-h">What this means for &lt;YOUR COMPANY&gt;</h3><p class="caption">An outside read from public sources.</p><div class="rows">
+<!-- Three rows. row-lead is one of: Opportunity, Strength, Risk, Threat, Watch -->
+<div class="row"><div class="row-lead"><!-- TAG --></div><div class="row-main"><div class="row-title"><!-- HEADLINE --></div><div class="row-detail"><!-- ONE SENTENCE --></div></div></div>
+</div></section>
+<!-- END OPTIONAL MODULE -->
+</section>
+<section id="known-unknowns" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">04</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Known unknowns</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Questions we know matter but can't answer yet, with what will answer them and when.</div></div>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>Open question</th><th>What would answer it</th><th>When (<!-- TIME ZONE -->)</th></tr></thead><tbody>
+<tr><td><!-- QUESTION --></td><td><!-- EVENT OR DATA --></td><td><!-- DATE AND TIME --></td></tr>
+</tbody></table></div>
+<!-- OPTIONAL MODULE: "What this means for <YOUR COMPANY>". Delete from here to END OPTIONAL MODULE if you do not use it. -->
+<hr class="divider"/><section class="card"><h3 class="card-h">What this means for &lt;YOUR COMPANY&gt;</h3><p class="caption">An outside read from public sources.</p><div class="rows">
+<!-- Three rows. row-lead is one of: Opportunity, Strength, Risk, Threat, Watch -->
+<div class="row"><div class="row-lead"><!-- TAG --></div><div class="row-main"><div class="row-title"><!-- HEADLINE --></div><div class="row-detail"><!-- ONE SENTENCE --></div></div></div>
+</div></section>
+<!-- END OPTIONAL MODULE -->
+</section>
+<section id="unknown-knowns" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">05</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Unknown knowns</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Public facts the market is underweighting. Each tagged Certain, Likely, or Guessing.</div></div>
+<!-- Each item links to its source -->
+<section class="card"><h3 class="card-h"><!-- TITLE --></h3><p class="text"><!-- TWO SENTENCES --></p><p class="text">Confidence: <!-- Certain / Likely / Guessing --></p><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="https://grok.com/?q=URL-ENCODED-QUESTION" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">Read more on Grok</a><a href="https://x.com/search?q=URL-ENCODED-SEARCH&amp;f=live" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">See it on X</a></div></section>
+<!-- OPTIONAL MODULE: "What this means for <YOUR COMPANY>". Delete from here to END OPTIONAL MODULE if you do not use it. -->
+<hr class="divider"/><section class="card"><h3 class="card-h">What this means for &lt;YOUR COMPANY&gt;</h3><p class="caption">An outside read from public sources.</p><div class="rows">
+<!-- Three rows. row-lead is one of: Opportunity, Strength, Risk, Threat, Watch -->
+<div class="row"><div class="row-lead"><!-- TAG --></div><div class="row-main"><div class="row-title"><!-- HEADLINE --></div><div class="row-detail"><!-- ONE SENTENCE --></div></div></div>
+</div></section>
+<!-- END OPTIONAL MODULE -->
+</section>
+<section id="unknown-unknowns" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">06</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Unknown unknowns</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Surprises from outside the big players. Each tagged Certain, Likely, or Guessing.</div></div>
+<!-- Bar to qualify: a credible public claim that would change prices, capacity, or the competitive order if it holds -->
+<section class="card"><h3 class="card-h"><!-- TITLE --></h3><p class="text"><!-- TWO SENTENCES --></p><p class="text">Confidence: <!-- Certain / Likely / Guessing --></p><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="https://grok.com/?q=URL-ENCODED-QUESTION" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">Read more on Grok</a><a href="https://x.com/search?q=URL-ENCODED-SEARCH&amp;f=live" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;border:1px solid var(--border);color:var(--text-2);font-family:var(--font);font-size:13px;line-height:18px;text-decoration:none">See it on X</a></div></section>
+<!-- OPTIONAL MODULE: "What this means for <YOUR COMPANY>". Delete from here to END OPTIONAL MODULE if you do not use it. -->
+<hr class="divider"/><section class="card"><h3 class="card-h">What this means for &lt;YOUR COMPANY&gt;</h3><p class="caption">An outside read from public sources.</p><div class="rows">
+<!-- Three rows. row-lead is one of: Opportunity, Strength, Risk, Threat, Watch -->
+<div class="row"><div class="row-lead"><!-- TAG --></div><div class="row-main"><div class="row-title"><!-- HEADLINE --></div><div class="row-detail"><!-- ONE SENTENCE --></div></div></div>
+</div></section>
+<!-- END OPTIONAL MODULE -->
+</section>
+<section id="x-saying" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">07</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>What X is saying</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Only posts cited in today's brief.</div></div>
+<div class="grid g2">
+<figure class="quote"><blockquote>&quot;<!-- QUOTE -->&quot;</blockquote><figcaption><!-- NAME (@handle). One-line note. --></figcaption></figure>
+</div></section>
+<!-- Optional: a "Behind the Tab" card here answering yesterday's reader questions, with sources -->
+<section id="compute-scoreboard" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">08</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Compute scoreboard</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Chip choices and the money behind them, from this window's announcements only.</div></div>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>Chip category</th><th>Buyer this window</th><th>Financing behind it</th></tr></thead><tbody>
+<tr><td><!-- CATEGORY --></td><td><!-- BUYERS or Not covered in this window --></td><td><!-- FINANCING or Not covered in this window --></td></tr>
+</tbody></table></div></section>
+<section id="buyer-map" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">09</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Buyer Map</span></div><div style="color:var(--text-2);font-size:14px;line-height:21px;margin-top:6px">Friday format. Which chips or vendors each buyer chose. Filter by desk or by chip.</div></div>
+<!-- Desk filter buttons: data-desk must match each row's data-desk. The counts are optional. -->
+<div class="seg" role="group" aria-label="Filter by desk"><button type="button" class="seg-btn on" data-desk="All desks">All</button><button type="button" class="seg-btn" data-desk="DESK 1"><!-- DESK 1 SHORT NAME --></button><!-- ...six desks in total --></div>
+<label class="sel"><span>Chip or vendor</span><select id="chip-filter"><option value="All">All chips</option><option value="CHIP"><!-- CHIP --></option></select></label>
+<div class="table-wrap"><table class="tbl buyer"><thead><tr><th>Company</th><th>Desk</th><th>What they did</th><th>Chips chosen</th><th>View</th></tr></thead><tbody>
+<!-- data-tags lists the chip filter values for the row, separated by | -->
+<tr data-desk="DESK" data-tags="CHIP A|CHIP B"><td><!-- COMPANY --></td><td><!-- DESK --></td><td><!-- WHAT THEY DID --></td><td><!-- CHIPS --></td><td><!-- ONE-LINE VIEW --></td></tr>
+</tbody></table></div></section>
+<section id="state-of-thesis" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">10</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>State of the Thesis</span></div></div>
+<div class="callout"><div class="callout-lead">Thesis status: <!-- Unchanged / Revised / Rewritten --> (<!-- DATE -->)</div><div><!-- THE BELIEF IN TWO SENTENCES, AND WHAT CHANGED --></div></div><p class="text">Unchanged means nothing tested it. Revised means new evidence reshaped one part. Rewritten means a falsifier actually happened.</p>
+<div class="rows"><!-- Three parts -->
+<div class="row"><div class="row-main"><div class="row-title">1. <!-- PART ONE --></div><div class="row-detail"><!-- STATUS, KEY EVIDENCE, NOTE --></div></div></div>
+</div>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>Falsifier</th><th>What would answer it</th><th>Status</th></tr></thead><tbody>
+<tr><td><!-- FALSIFIER --></td><td><!-- ... --></td><td><!-- Not triggered / Triggered --></td></tr>
+</tbody></table></div></section>
+<section id="sources" class="band"><div style="font-family:var(--font);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);position:relative"><div style="position:absolute;top:-2px;left:0;width:48px;height:3px;border-radius:9999px;background:var(--accent)"></div><div style="color:var(--text-1);font-size:28px;line-height:34px;letter-spacing:-0.01em;font-weight:600"><span style="color:var(--accent)">11</span><span style="color:var(--text-3);font-weight:400;margin:0 12px">|</span><span>Sources</span></div></div>
+<div class="links">
+<a class="linkcard" href="URL" target="_blank" rel="noopener noreferrer"><span class="lc-title"><!-- TITLE --></span><span class="lc-site"><!-- SITE --></span></a>
+</div></section>
+<p class="foot"><!-- FOOTER LINE --></p></main>
+<script>
+(function(){var d="All desks",c="All";var rows=document.querySelectorAll(".buyer tbody tr");
+function apply(){rows.forEach(function(r){var ok=(d==="All desks"||r.dataset.desk===d)&&(c==="All"||r.dataset.tags.split("|").indexOf(c)>-1);r.style.display=ok?"":"none";});}
+document.querySelectorAll(".seg-btn").forEach(function(b){b.addEventListener("click",function(){d=b.dataset.desk;document.querySelectorAll(".seg-btn").forEach(function(x){x.classList.toggle("on",x===b);});apply();});});
+var s=document.getElementById("chip-filter");if(s)s.addEventListener("change",function(){c=s.value;apply();});})();
+</script>
+</body>
+</html>
