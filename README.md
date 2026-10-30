@@ -86,7 +86,7 @@ The four middle sections (03 to 06) are Donald Rumsfeld's quadrants. Each one op
 
 ### 6. Publishing
 
-Each weekday, overwrite `index.html` and `brief.mp3`, commit, and push to `main`. GitHub Pages serves the new version within a minute or two. Start from `templates/page-template.html`, or copy yesterday's `index.html` and replace its content. Keep it one self-contained file: inline CSS, no outside fonts, scripts, or trackers.
+Each weekday, overwrite `index.html` and `brief.mp3`, commit, and push to `main`. Each edition is also kept at a permanent dated address, `/YYYY-MM-DD/` (its own `index.html` and `brief.mp3`), listed on `/archive/`. Every section and card heading has a stable anchor and a Copy link button that copies the dated permalink, so shared links never change when the next edition replaces the root page. Commit normally; do not force-push, or the dated folders disappear. GitHub Pages serves the new version within a minute or two. Start from `templates/page-template.html`, or copy yesterday's `index.html` and replace its content. Keep it one self-contained file: inline CSS, no outside fonts, scripts, or trackers.
 
 ### 7. Scheduling
 

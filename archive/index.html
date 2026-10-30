@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Past editions: Cameron&#x27;s Daily Brief on AI Infrastructure</title>
+<meta name="referrer" content="no-referrer">
+<style>
+:root{--bg:#ffffff;--bg-subtle:#f6f7f9;--text-1:#0f1115;--text-2:#4a4f59;--text-3:#7a808a;--border:#e3e5e9;--border-subtle:#eef0f2;--border-strong:#c9cdd3;--accent:#1d6ff2;--accent-2:#e3a400;--accent-3:#11a8c4;--plus:#1a8a4a;--minus:#c23b3b;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#111316;--bg-subtle:#1a1d21;--text-1:#f1f3f5;--text-2:#b4bac3;--text-3:#878e98;--border:#2b2f35;--border-subtle:#22262b;--border-strong:#3a3f46;--accent:#5b9bff;--accent-2:#f2c14e;--accent-3:#46c8de;--plus:#4cc283;--minus:#ff7a7a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text-1);font-family:var(--font);font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:inherit}
+.page{max-width:1280px;margin:0 auto;padding:40px 32px 80px}
+.title{font-size:36px;line-height:42px;letter-spacing:-0.02em;font-weight:600;margin:0 0 14px}
+.band{scroll-margin-top:16px;display:flex;flex-direction:column;gap:16px}
+.sub{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.card{border:1px solid var(--border);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.card-h{margin:0;font-size:18px;line-height:25px;font-weight:600}
+.sub>.card-h{font-size:16px}
+.caption{margin:-6px 0 0;color:var(--text-3);font-size:13px}
+.text{margin:0;color:var(--text-1);max-width:860px}
+.bullets{margin:0;padding-left:20px;max-width:860px;display:flex;flex-direction:column;gap:8px}
+.divider{border:0;border-top:1px solid var(--border-subtle);margin:8px 0;width:100%}
+.callout{background:var(--bg-subtle);border-radius:12px;padding:16px 18px;border-left:3px solid var(--accent)}
+.callout-lead{font-weight:600;margin-bottom:4px}
+.grid{display:grid;gap:12px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pc{border:1px solid var(--border-subtle);border-radius:12px;padding:14px 16px}
+.pc-h{font-weight:600;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.mk{display:inline-flex;width:18px;height:18px;border-radius:9999px;align-items:center;justify-content:center;font-size:13px}
+.plus{color:var(--plus);border:1px solid var(--plus)}.minus{color:var(--minus);border:1px solid var(--minus)}
+.props{margin:0;display:flex;flex-direction:column;border-top:1px solid var(--border-subtle)}
+.prop{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--border-subtle)}
+.prop dt{color:var(--text-2);font-size:13px}.prop dd{margin:0}
+.rows{display:flex;flex-direction:column;border-top:1px solid var(--border-subtle)}
+.row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-subtle);align-items:flex-start}
+.row-lead{flex:0 0 110px;color:var(--accent);font-size:13px;font-weight:500;padding-top:1px}
+.row-main{flex:1;min-width:0}.row-title{font-weight:600}.row-detail{color:var(--text-2);margin-top:2px}
+.row-meta{flex:0 0 auto;color:var(--text-2);font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.metric-label{color:var(--text-2);font-size:13px}.metric-value{font-size:28px;line-height:36px;font-weight:600;margin:4px 0}.metric-detail{color:var(--text-3);font-size:13px}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:16px}
+.tbl{border-collapse:collapse;width:100%;font-size:14px}
+.tbl th{text-align:left;font-weight:500;color:var(--text-2);font-size:13px;padding:10px 14px;border-bottom:1px solid var(--border);white-space:nowrap}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border-subtle);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}.tbl td:first-child{font-weight:500}
+.buyer td:nth-child(3){min-width:280px}
+.quote{margin:0;border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.quote blockquote{margin:0 0 8px;font-size:16px}.quote figcaption{color:var(--text-3);font-size:13px}
+.links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.linkcard{display:flex;flex-direction:column;gap:4px;border:1px solid var(--border);border-radius:12px;padding:12px 14px;text-decoration:none}
+.linkcard:hover{border-color:var(--border-strong)}.lc-title{font-weight:500}.lc-site{color:var(--text-3);font-size:13px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg-btn{font:inherit;font-size:13px;border:1px solid var(--border);background:none;color:var(--text-2);border-radius:9999px;padding:4px 12px;cursor:pointer}
+.seg-btn.on{border-color:var(--accent);color:var(--accent)}.seg-n{margin-left:6px;color:var(--text-3)}
+.sel{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--text-2)}
+.sel select{font:inherit;font-size:14px;color:var(--text-1);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:6px 10px}
+.audio{margin-top:14px;display:flex;flex-direction:column;gap:6px;max-width:520px}
+.audio-label{color:var(--accent);font-size:13px;font-weight:500}.audio audio{width:100%}
+.audio-open{font-size:12px}.audio-open a{color:var(--accent);text-decoration:none}
+.toc{margin-top:18px;font-size:13px}
+.toc summary{cursor:pointer;color:var(--text-2);list-style:none;display:inline-flex;align-items:center;gap:6px}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary::after{content:"";width:6px;height:6px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(-45deg);transition:transform 150ms ease}
+.toc[open] summary::after{transform:rotate(45deg)}
+.toc nav{display:flex;flex-direction:column;gap:6px;margin-top:10px;padding-left:12px;border-left:1px solid var(--border-subtle)}
+.toc nav a{text-decoration:none;color:var(--text-1)}.toc-n{color:var(--accent)}
+.foot{margin-top:48px;color:var(--text-3);font-size:13px}
+@media (max-width:760px){.page{padding:24px 16px 60px}.title{font-size:28px;line-height:34px}.g2,.g3,.links{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.prop{grid-template-columns:1fr;gap:2px}.row{flex-wrap:wrap}.row-lead{flex-basis:100%}}
+@media (max-width:420px){.metrics{grid-template-columns:1fr}}
+
+.card-h a{text-decoration:none;color:var(--text-1)}.card-h a:hover{color:var(--accent)}
+.bullets a{color:var(--text-2);text-decoration:none}.bullets a:hover{color:var(--accent);text-decoration:underline}
+.back{color:var(--accent);text-decoration:none;font-size:13px}
+</style>
+</head>
+<body>
+<main class="page"><h1 class="title">Past editions</h1>
+<p class="text" style="color:var(--text-2)">Every edition of Cameron&#x27;s Daily Brief on AI Infrastructure, newest first. Each date opens the brief as published that morning; each headline links straight to its Big Three story.</p>
+<p><a class="back" href="../">Latest edition</a></p>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px"><div class="card"><h3 class="card-h"><a href="../2026-10-30/">Friday, October 30, 2026</a></h3><ul class="bullets"><li><a href="../2026-10-30/#amazon-cloud-cash">Amazon&#x27;s cloud sped up as its cash ran out</a></li><li><a href="../2026-10-30/#intel-pc-warning">Intel&#x27;s PC warning sank the chip sector</a></li><li><a href="../2026-10-30/#nvidia-backstop">NVIDIA may backstop a neocloud&#x27;s construction debt</a></li></ul></div></div>
+<p class="foot">Permanent editions start on October 30, 2026.</p></main>
+</body>
+</html>
