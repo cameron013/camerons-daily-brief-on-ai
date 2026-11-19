@@ -9,6 +9,9 @@ VOICE="${2:-ara}"      # see GET https://api.x.ai/v1/tts/voices for the full lis
 SPEED="${3:-0.95}"     # 0.7 to 1.5; 0.95 lands about 750 words near 4:35
 OUT="${OUT:-brief.mp3}"
 
+# Optional: keep the key in a private file instead (default ~/.secrets/xai_api_key).
+KEY_FILE="${XAI_API_KEY_FILE:-$HOME/.secrets/xai_api_key}"
+if [ -f "$KEY_FILE" ]; then XAI_API_KEY="$(cat "$KEY_FILE")"; fi
 : "${XAI_API_KEY:?Set XAI_API_KEY in your environment first}"
 command -v jq >/dev/null || { echo "jq is required"; exit 1; }
 command -v ffprobe >/dev/null || { echo "ffmpeg (ffprobe) is required"; exit 1; }
